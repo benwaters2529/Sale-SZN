@@ -1,0 +1,154 @@
+<!-- Author: Benjamin Waters -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sale SZN</title>
+<link rel="stylesheet" type="text/css" href="style_electronics.css">
+<link rel="stylesheet" type="text/css" href="cart_style.css">
+
+<style>
+.wrapper {
+	background-color: #FFFFFF;
+	width: 100%;
+	max-width: 950px;
+	margin: 0 auto;
+	padding: 10px;
+	box-shadow: 5px 5px 15px 5px #4A2511;
+	border-radius: 10px 10px 10px 10px;
+
+}
+.container {
+	display: flex;
+	align-items: center;
+	padding-top: 50px;
+	padding-bottom: 50px;
+
+}
+
+.left {
+	position: relative;
+	left: 0%;
+	width: 100%;
+	margin: auto;
+
+}
+
+.right {
+	position: relative;
+	right: 0%;
+	width: 100%;
+	margin: auto;
+
+}
+a {
+	display: inline-block;
+	text-decoration: none;
+	color: brown;
+
+}
+img {
+	border: solid 1px;
+	border-color: #000000;
+}
+
+</style>
+</head>
+
+
+
+<body>
+<header class="banner">
+<div class="cart-container">
+  <div class="cart" onclick="toggleCart()">🛒</div>
+  <span class="cart-badge" id="cartBadge">0</span>
+</div>
+
+<h2>Discount Phones</h2>
+
+</header>
+
+<nav class="navbar">
+  <ul>
+	<li><a href="index.html">Home</a></li>
+	<li><a href="clothes.html">Clothes</a></li>
+	<li><a href="electronics.html">Electronics</a></li>
+	<li><a href="jewelry.html">Jewelry</a></li>
+	<li><a href="discountShoePage.html">Shoes</a></li>
+	<li><a href="toys.html">Toys</a></li>
+	<li><a href="thanksgiving.html">Thanksgiving/Christmas</a></li>
+  </ul>
+</nav>
+
+<section class="content">
+<div class="wrapper">
+<!-- Discount iPhones -->
+<h2>Discount iPhones</h2>
+
+<div class="container">
+	<div class="left">
+		<p>Apple iPhone 16e</p><img src="Pictures/iphone16.jpg" width="200" height="250"><br><p>Original Price: <del>$549.00</del></p><p>Discount Price: $399.00 (27% off)</p>
+	<button onclick="addToCart('Apple iPhone 16e', 399.00)">Add to Cart</button>
+	</div>
+	<div class="right">
+		<p>Apple iPhone 12</p><img src="Pictures/iphone12.jpg" width="200" height="250"><br><p>Original Price: <del>$629.00</del></p><p>Discount Price: $197.00 (12% off)</p>
+	<button onclick="addToCart('Apple iPhone 12', 197.00)">Add to Cart</button>
+	</div>
+
+</div>
+<div class="container">
+	<div class="left">
+		<p>Apple iPhone SE</p><img src="Pictures/iphonese.jpg" width="200" height="250"><br><p>Original Price: <del>$399.00</del></p><p>Discount Price: $111.00 (72% off)</p>
+	<button onclick="addToCart('Apple iPhone SE', 111.00)">Add to Cart</button>
+	</div>
+	<div class="right">
+		<p>Restored Apple iPhone 14 Pro</p><img src="Pictures/iphone14pro.jpg" width="200" height="250"><br><p>Original Price: <del>$999.00</del></p><p>Discount Price: $419.95 (57% off)</p>
+	<button onclick="addToCart('Restored Apple iPhone 14 Pro', 419.95)">Add to Cart</button>
+	</div>
+
+</div>
+
+
+<!-- Discount Android Phones -->
+<h2>Discount Android Phones</h2>
+
+<div class="container">
+	<div class="left">
+		<p>Samsung Galaxy A03</p><img src="Pictures/sgalaxyA03.jpg" width="200" height="250"><br><p>Original Price: <del>$649.00</del></p><p>Discount Price: $79.95 (87% off)</p><button onclick="addToCart('Samsung Galaxy A03', 79.95)">Add to Cart</button>
+	</div>
+
+	<div class="right">
+		<p>Samsung 16GB Galaxy A01</p><img src="Pictures/sgalaxyA01.jpg" width="200" height="250"><br><p>Original Price: <del>$60.00</del></p><p>Discount Price: $39.00(34% off)</p><button onclick="addToCart('Samsung 16GB Galaxy A01', 39.00)">Add to Cart</button>
+	</div>
+</div>
+<div class="container">
+	<div class="left">
+		<p>Samsung Galaxy S25 FE</p><img src="Pictures/sgalaxy25.jpg" width="300" height="250"><br><p>Original Price: <del>$620.00</del></p><p>Discount Price: $474.99 (23% off)</p><button onclick="addToCart('Samsung Galaxy S25 FE', 474.99)">Add to Cart</button>
+	</div>
+	
+	<div class="right">
+		<p>Apple TV 3rd Generation</p><img src="Pictures/sgalaxy21.jpg" width="200" height="250"><br><p>Original Price: <del>$700.00</del></p><p>Discount Price: $159.00 (77% off)</p><button onclick="addToCart('Apple TV 3rd Generation', 159.00)">Add to Cart</button>
+	</div>
+</div>
+
+</div>
+
+
+</section>
+
+<!-- Cart Popup -->
+<div class="cart-model" id="cartModel">
+  <h2>Your Cart</h2>
+  <div class="cart-items" id="cartItems"></div> <!-- List of selected items -->
+  <div class="cart-total" id="cartTotal">Total: $0.00</div> <!-- Running total -->
+  <button class="close-btn" onclick="toggleCart()">Close</button>
+</div>
+
+<!-- Javascript External File Section -->
+
+<script src="shopping_cart.js"></script>
+
+</body>
+
+</html>

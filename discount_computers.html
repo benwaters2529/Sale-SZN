@@ -1,0 +1,176 @@
+<!-- Author: Benjamin Waters -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sale SZN</title>
+
+<link rel="stylesheet" type="text/css" href="style_electronics.css">
+<link rel="stylesheet" type="text/css" href="cart_style.css">
+
+<style>
+.wrapper {
+	background-color: #FFFFFF;
+	width: 100%;
+	max-width: 950px;
+	margin: 0 auto;
+	padding: 10px;
+	box-shadow: 5px 5px 15px 5px #4A2511;
+	border-radius: 10px 10px 10px 10px;
+
+}
+.container {
+	display: flex;
+	align-items: center;
+	padding-top: 50px;
+	padding-bottom: 50px;
+
+}
+
+.left {
+	position: relative;
+	left: 0%;
+	width: 100%;
+	margin: auto;
+
+}
+
+.right {
+	position: relative;
+	right: 0%;
+	width: 100%;
+	margin: auto;
+
+}
+a {
+	display: inline-block;
+	text-decoration: none;
+	color: brown;
+
+}
+img {
+	border: solid 1px;
+	border-color: #000000;
+}
+
+</style>
+</head>
+
+
+
+<body>
+<header class="banner">
+<div class="cart-container">
+  <div class="cart" onclick="toggleCart()">🛒</div>
+  <span class="cart-badge" id="cartBadge">0</span>
+</div>
+
+<h2>Discount Computers</h2>
+
+</header>
+
+<nav class="navbar">
+  <ul>
+	<li><a href="index.html">Home</a></li>
+	<li><a href="clothes.html">Clothes</a></li>
+	<li><a href="electronics.html">Electronics</a></li>
+	<li><a href="jewelry.html">Jewelry</a></li>
+	<li><a href="discountShoePage.html">Shoes</a></li>
+	<li><a href="toys.html">Toys</a></li>
+	<li><a href="thanksgiving.html">Thanksgiving/Christmas</a></li>
+  </ul>
+</nav>
+
+<section class="content">
+<div class="wrapper">
+<!-- Mac Computers -->
+<h2>Macintosh Computers</h2>
+
+<div class="container">
+	<div class="left">
+		<p>Restored 2023 Apple iMac with Apple M3 chip</p><img src="Pictures/imac_m3.jpg" width="300" height="250"><br><p>Original Price: <del>$1,000.00</del></p><p>Discount Price: $699.99 (30% off)</p>
+	<button onclick="addToCart('Restored 2023 Apple iMac with Apple M3 chip', 699.99)">Add to Cart</button>
+	</div>
+	<div class="right">
+		<p>Apple iMac Retina 4K Display All-in-One Core i5 Up to 3.5 GHz</p><img src="Pictures/imac_retina.jpg" width="300" height="250"><br><p>Original Price: <del>$1,299.00</del></p><p>Discount Price: $293.31 (77% off)</p>
+	<button onclick="addToCart('Apple iMac Retina 4K Display All-in-One Core i5 Up to 3.5 GHz', 293.31)">Add to Cart</button>
+	</div>
+
+</div>
+<div class="container">
+	<div class="left">
+		<p>Apple MacBook Air M1 8GB SSD</p><img src="Pictures/mbair_m1.jpg" width="300" height="250"><br><p>Original Price: <del>$999.00</del></p><p>Discount Price: $393.00 (60% off)</p>
+	<button onclick="addToCart('Apple MacBook Air M1 8GB SSD', 393.00)">Add to Cart</button>
+	</div>
+	<div class="right">
+		<p>Apple MacBook Pro 13.3 inch</p><img src="Pictures/mbpro_13in.jpg" width="300" height="250"><br><p>Original Price: <del>$1,799.00</del></p><p>Discount Price: $336.99 (81% off)</p>
+	<button onclick="addToCart('Apple MacBook Pro 13.3 inch', 336.99)">Add to Cart</button>
+	</div>
+
+</div>
+
+<!-- Dell Computers -->
+<h2>Dell Computers</h2>
+
+<div class="container">
+	<div class="left">
+		<p>Dell Pro Micro QCM1255 Desktop Computer AMD Ryzen 5</p><img src="Pictures/dellpro_micro.jpg" alt="Apple TV 5th Gen 32GB" width="300" height="250"><br><p>Original Price: <del>$819.00</del></p><p>Discount Price: $709.00 (13% off)</p><button onclick="addToCart('Dell Pro Micro QCM1255 Desktop Computer AMD Ryzen 5', 709.00)">Add to Cart</button>
+	</div>
+
+	<div class="right">
+		<p>Dell Pro QCS1255 Desktop Computer AMD Ryzen 5 8500G</p><img src="Pictures/dellpro_q.jpg" width="300" height="250"><br><p>Original Price: <del>$619.00</del></p><p>Discount Price: $489.95 (20% off)</p><button onclick="addToCart('Dell Pro QCS1255 Desktop Computer AMD Ryzen 5 8500G', 489.95)">Add to Cart</button>
+	</div>
+</div>
+<div class="container">
+	<div class="left">
+		<p>Dell Inspiron 15.6 inch FHD Touchscreen Laptop Intel</p><img src="Pictures/dell_inspiron.jpg" width="300" height="250"><br><p>Original Price: <del>$299.00</del></p><p>Discount Price: $279.00 (6% off)</p><button onclick="addToCart('Dell Inspiron 15.6 inch FHD Touchscreen Laptop Intel', 279.00)">Add to Cart</button>
+	</div>
+	
+	<div class="right">
+		<p>Dell Latitude 5440 14" Laptop Intel Core</p><img src="Pictures/dell_latitude.jpg" alt="Dell Latitude 5440 14" Laptop Intel Core" width="300" height="250"><br><p>Original Price: <del>$500.00</del></p><p>Discount Price: $349.99 (30% off)</p><button onclick="addToCart('Dell Latitude 5440 14" Laptop Intel Core', 349.99)">Add to Cart</button>
+	</div>
+</div>
+
+<!-- TCL TVs -->
+<h2>Lenovo Computers</h2>
+
+<div class="container">
+	<div class="left">
+		<p>Lenovo 3 Chromebook</p><img src="Pictures/lenovocb3.jpg" alt="TCL 4K Smart TV" width="300" height="250"><br><p>Original Price: <del>$319.00</del></p><p>Discount Price: $183.00 (42% off)</p><button onclick="addToCart('Lenovo 3 Chromebook', 183.00)">Add to Cart</button>
+	</div>
+
+	<div class="right">
+		<p>Lenovo IdeaPad 3 15IJL6 15.6" Chromebook Intel Celeron N4500</p><img src="Pictures/lenovopad3.jpg" width="300" height="250"><br><p>Original Price: <del>$249.00</del></p><p>Discount Price: $178.00 (28% off)</p><button onclick="addToCart('Lenovo IdeaPad 3 15IJL6 15.6" Chromebook Intel Celeron N4500', 178.00)">Add to Cart</button>
+	</div>
+</div>
+<div class="container">
+	<div class="left">
+		<p>Lenovo IdeaPad Slim 3 15.6" Laptop Ryzen</p><img src="Pictures/lenovo_slim.jpg" width="300" height="250"><br><p>Original Price: <del>$450.00</del></p><p>Discount Price: $290.26 (35% off)</p><button onclick="addToCart('Lenovo IdeaPad Slim 3 15.6" Laptop Ryzen', 290.26)">Add to Cart</button>
+	</div>
+
+	<div class="right">
+		<p>Lenovo V15 G4 IRU</p><img src="Pictures/lenovo_v15.jpg" width="300" height="250"><br><p>Original Price: <del>$500.00</del></p><p>Discount Price: $399.99 (20% off)</p><button onclick="addToCart('Lenovo V15 G4 IRU', 399.99)">Add to Cart</button>
+	</div>
+</div>
+</div>
+</div>
+
+
+</section>
+
+<!-- Cart Popup -->
+<div class="cart-model" id="cartModel">
+  <h2>Your Cart</h2>
+  <div class="cart-items" id="cartItems"></div> <!-- List of selected items -->
+  <div class="cart-total" id="cartTotal">Total: $0.00</div> <!-- Running total -->
+  <button class="close-btn" onclick="toggleCart()">Close</button>
+</div>
+
+<!-- Javascript External File Section -->
+
+<script src="shopping_cart.js"></script>
+
+</body>
+
+</html>

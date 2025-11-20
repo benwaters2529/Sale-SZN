@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Discounted Shoes</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <!-- ===== INTERNAL CSS SECTION ===== -->
+  <style>
+    /* === General Page Styles === */
+    body {
+      font-family: Arial, sans-serif;  /* Sets font style */
+      margin: 0;
+      background-color: #fef7e5;       /* Light beige background */
+      color: #3e2723;                  /* Dark brown text color */
+    }
+
+    /* === Header Styling (Top Bar) === */
+    header {
+      background-color: #6d4c41;       /* Dark brown background */
+      color: white;                    /* White text */
+      display: flex;                   /* Places items side by side */
+      justify-content: space-between;  /* Space between name and cart */
+      align-items: center;             /* Vertically centers items */
+      padding: 15px 30px;
+      position: relative;
+    }
+
+    /* === Main Header Text (Website Title) === */
+    header h1 {
+      flex: 1;                         /* Takes full space between elements */
+      text-align: center;
+      margin: 0;
+      font-size: 1.8em;
+    }
+
+    /* === Left Side Name === */
+    header .name {
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
+    /* === Cart Icon Section === */
+    .cart-container {
+      position: relative;              /* To hold badge in corner */
+      display: inline-block;
+    }
+
+    .cart {
+      font-size: 1.8em;
+      cursor: pointer;
+      transition: transform 0.2s;      /* Animation when hovering */
+    }
+
+    .cart:hover {
+      transform: scale(1.2);           /* Makes icon grow slightly on hover */
+    }
+
+    /* === Notification badge for cart count === */
+    .cart-badge {
+      position: absolute;
+      top: -8px;
+      right: -10px;
+      background-color: #e53935;       /* Red badge */
+      color: white;
+      border-radius: 50%;              /* Makes circle */
+      font-size: 0.75em;
+      padding: 2px 6px;
+      display: none;                   /* Hidden when empty */
+    }
+
+    /* === Shoe Grid Layout === */
+    .shoe-grid {
+      display: grid;                                   /* Responsive grid */
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* === Individual Shoe Cards === */
+    .shoe {
+      background-color: #e8dcc6;
+      border-radius: 12px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);          /* Adds shadow box */
+    }
+
+    .shoe img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;                              /* Ensures proper scaling */
+      border-radius: 10px;
+    }
+
+    /* === Price Styles === */
+    .price {
+      margin: 8px 0;
+      font-size: 1.1em;
+    }
+
+    .original-price {
+      text-decoration: line-through;                  /* Cross out original price */
+      color: #a1887f;
+      margin-right: 8px;
+    }
+
+    .discounted-price {
+      color: #2e7d32;                                 /* Green discount color */
+      font-weight: bold;
+    }
+
+    /* === Add to Cart Buttons === */
+    button {
+      background-color: #6d4c41;                      /* Dark brown button */
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 15px;
+      margin-top: 10px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    button:hover {
+      background-color: #5d4037;                      /* Slightly darker on hover */
+    }
+
+    /* === Popup Cart Modal Styling === */
+    .cart-modal {
+      display: none;                                  /* Hidden by default */
+      position: fixed;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, 0);                  /* Centers horizontally */
+      background-color: white;
+      border: 2px solid #6d4c41;
+      border-radius: 12px;
+      padding: 20px;
+      z-index: 10;
+      width: 320px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .cart-modal h2 {
+      margin-top: 0;
+      text-align: center;
+    }
+
+    /* === Cart Items Container === */
+    .cart-items {
+      max-height: 200px;
+      overflow-y: auto;                               /* Scroll if list gets too long */
+      margin-bottom: 15px;
+    }
+
+    /* === Cart Total Display === */
+    .cart-total {
+      text-align: right;
+      font-weight: bold;
+      margin-top: 10px;
+      border-top: 1px solid #ccc;
+      padding-top: 8px;
+    }
+
+    /* === Close Button (inside modal) === */
+    .close-btn {
+      background-color: #d7ccc8;
+      color: #3e2723;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ===== HEADER SECTION ===== -->
+  <header>
+    <div class="name">Kobe Bell</div> <!-- Left: Name label -->
+    <h1>Discounted Shoes</h1>         <!-- Center: Website title -->
+
+    <!-- Right: Shopping cart icon with notification badge -->
+    <div class="cart-container">
+      <div class="cart" onclick="toggleCart()">🛒</div>
+      <span class="cart-badge" id="cartBadge">0</span>
+    </div>
+	<nav class="navbar">
+        
+        <div class="menu-toggle" id="menu-toggle">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+  </header>
+<nav class="navbar">
+  <ul>
+	<li><a href="index.html">Home</a></li>
+	<li><a href="clothes.html">Clothes</a></li>
+	<li><a href="electronics.html">Electronics</a></li>
+	<li><a href="jewelry.html">Jewelry</a></li>
+	<li><a href="discountShoePage.html">Shoes</a></li>
+	<li><a href="toys.html">Toys</a></li>
+	<li><a href="thanksgiving.html">Thanksgiving/Christmas</a></li>
+  </ul>
+</nav>
+
+  <!-- ===== PRODUCT GRID SECTION ===== -->
+  <div class="shoe-grid">
+    <!-- Each .shoe is one product card -->
+    <div class="shoe">
+      <img src="Pictures/shoe.jpg" alt="Cartoon Shoe">
+      <h3>Cartoon Shoe</h3>
+      <div class="price">
+        <span class="original-price">$100.00</span>
+        <span class="discounted-price">$65.00</span>
+      </div>
+      <button onclick="addToCart('Cartoon Shoe', 65)">Add to Cart</button>
+    </div>
+
+    <div class="shoe">
+      <img src="Pictures/air.jpg" alt="AirMax">
+      <h3>AirMax</h3>
+      <div class="price">
+        <span class="original-price">$120.00</span>
+        <span class="discounted-price">$79.99</span>
+      </div>
+      <button onclick="addToCart('AirMax', 79.99)">Add to Cart</button>
+    </div>
+
+    <div class="shoe">
+      <img src="Pictures/Jordan.jpg" alt="Jordan Retro 3">
+      <h3>Jordan Retro 3</h3>
+      <div class="price">
+        <span class="original-price">$200.00</span>
+        <span class="discounted-price">$149.00</span>
+      </div>
+      <button onclick="addToCart('Jordan Retro 3', 149)">Add to Cart</button>
+    </div>
+
+    <div class="shoe">
+      <img src="Pictures/addias.jpg" alt="Adidas">
+      <h3>Adidas</h3>
+      <div class="price">
+        <span class="original-price">$90.00</span>
+        <span class="discounted-price">$60.00</span>
+      </div>
+      <button onclick="addToCart('Adidas', 60)">Add to Cart</button>
+    </div>
+
+    <div class="shoe">
+      <img src="Pictures/Timb.jpg" alt="Classic Tims">
+      <h3>Classic Tims</h3>
+      <div class="price">
+        <span class="original-price">$150.00</span>
+        <span class="discounted-price">$99.00</span>
+      </div>
+      <button onclick="addToCart('Classic Tims', 99)">Add to Cart</button>
+    </div>
+
+    <div class="shoe">
+      <img src="Pictures/dunk.jpg" alt="Gray Dunk">
+      <h3>Gray Dunk</h3>
+      <div class="price">
+        <span class="original-price">$110.00</span>
+        <span class="discounted-price">$74.00</span>
+      </div>
+      <button onclick="addToCart('Gray Dunk', 74)">Add to Cart</button>
+    </div>
+
+    <div class="shoe">
+      <img src="Pictures/dress.jpg" alt="Dress Shoes">
+      <h3>Dress Shoes</h3>
+      <div class="price">
+        <span class="original-price">$130.00</span>
+        <span class="discounted-price">$89.00</span>
+      </div>
+      <button onclick="addToCart('Dress Shoes', 89)">Add to Cart</button>
+    </div>
+
+    <div class="shoe">
+      <img src="Pictures/run.jpg" alt="Running Shoes">
+      <h3>Running Shoes</h3>
+      <div class="price">
+        <span class="original-price">$95.00</span>
+        <span class="discounted-price">$69.00</span>
+      </div>
+      <button onclick="addToCart('Running Shoes', 69)">Add to Cart</button>
+    </div>
+
+    <div class="shoe">
+      <img src="Pictures/new balance.jpg" alt="New Balance">
+      <h3>New Balance</h3>
+      <div class="price">
+        <span class="original-price">$115.00</span>
+        <span class="discounted-price">$84.00</span>
+      </div>
+      <button onclick="addToCart('New Balance', 84)">Add to Cart</button>
+    </div>
+
+    <div class="shoe">
+      <img src="Pictures/check.jpg" alt="Converse">
+      <h3>Converse</h3>
+      <div class="price">
+        <span class="original-price">$70.00</span>
+        <span class="discounted-price">$49.00</span>
+      </div>
+      <button onclick="addToCart('Converse', 49)">Add to Cart</button>
+    </div>
+  </div>
+
+  <!-- ===== CART POPUP SECTION ===== -->
+  <div class="cart-modal" id="cartModal">
+    <h2>Your Cart</h2>
+    <div class="cart-items" id="cartItems"></div>    <!-- List of selected items -->
+    <div class="cart-total" id="cartTotal">Total: $0.00</div> <!-- Running total -->
+    <button class="close-btn" onclick="toggleCart()">Close</button>
+  </div>
+
+  <!-- ===== JAVASCRIPT SECTION ===== -->
+  <script>
+    // ==== VARIABLES TO STORE ELEMENTS ====
+    
+    const cartModal = document.getElementById('cartModal');
+    const cartItemsDiv = document.getElementById('cartItems');
+    const cartTotalDiv = document.getElementById('cartTotal');
+    const cartBadge = document.getElementById('cartBadge');
+
+    const storedCart = localStorage.getItem('cart');
+    const cart = storedCart ? JSON.parse(storedCart) : [];
+
+    // ==== UPDATE CART DISPLAY IN POPUP ====
+    function updateCartDisplay() {
+      cartItemsDiv.innerHTML = '';                  // Clear previous list
+      let total = 0;
+
+      if (cart.length === 0) {
+        cartItemsDiv.innerHTML = '<p>Your cart is empty.</p>';
+      } else {
+        cart.forEach((item, i) => {
+          total += item.price;                      // Add up total
+          const div = document.createElement('div');
+          div.innerHTML = `${item.name} - $${item.price.toFixed(2)} 
+            <button onclick="removeFromCart(${i})">Remove</button>`;
+          cartItemsDiv.appendChild(div);
+        });
+      }
+
+      cartTotalDiv.textContent = `Total: $${total.toFixed(2)}`; // Show total
+    }
+
+    // ==== UPDATE CART BADGE NUMBER ====
+    function updateBadge() {
+      const count = cart.length;
+      if (count > 0) {
+        cartBadge.style.display = 'inline';
+        cartBadge.textContent = count;              // Show number of items
+      } else {
+        cartBadge.style.display = 'none';           // Hide if empty
+      }
+    }
+
+    updateBadge();
+    updateCartDisplay();
+   
+    <!-- Saving Cart to Local Storage -->
+    function saveCart() {
+	localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
+
+    // ==== ADD ITEM TO CART ====
+    function addToCart(name, price) {
+      cart.push({ name, price });                   // Add new item as an object
+      saveCart();
+      updateCartDisplay();                          // Refresh list inside popup
+      updateBadge();                                // Update notification count
+    }
+
+    // ==== REMOVE ITEM FROM CART ====
+    function removeFromCart(index) {
+      cart.splice(index, 1);                        // Remove item from array
+      saveCart();
+      updateCartDisplay();
+      updateBadge();
+    }
+
+
+    // ==== SHOW OR HIDE CART POPUP ====
+    function toggleCart() {
+      cartModal.style.display =
+        cartModal.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
+

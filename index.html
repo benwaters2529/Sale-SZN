@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sale SZN</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cart_style.css">
+
+<style>
+.cart-badge {
+	position: absolute;
+	top: 40px;
+	right: 9px;
+	background-color: #e53935;
+	color: white;
+	border-radius: 50%;
+	font-size: 0.75em;
+	padding: 2px 6px;
+	display: none;
+}
+
+</style>
+
+</head>
+<body>
+    <header class="banner">
+	<div class="cart-container">
+  	    <div class="cart" onclick="toggleCart()">🛒</div>
+  	    <span class="cart-badge" id="cartBadge">0</span>
+	</div>
+        <div class="overlay">
+            <h1>SALE SZN</h1>
+            <p>Unbeatable discounts all season long!</p>
+            <a href="#shop" class="cta-btn">Shop Now</a>
+        </div>
+    </header>
+
+    <nav class="navbar">
+        
+        <div class="menu-toggle" id="menu-toggle">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="clothes.html">Clothes</a></li>
+            <li><a href="electronics.html">Electronics</a></li>
+	    <li><a href="jewelry.html">Jewelry</a></li>
+	    <li><a href="Toys.html">Toys</a></li>
+	    <li><a href="thanksgiving.html">Thanksgiving/Christmas</a></li>
+        </ul>
+    </nav>
+
+    <section class="content" id="shop">
+        <h2>Welcome to Sale SZN!</h2>
+        <p>Shop smarter with exclusive deals on top brands. Everything you need — from fashion to gadgets — all in one place!</p>
+
+        <div class="deal-card">
+            <h3>🔥 Deal of the Day 🔥</h3>
+            <img id="deal-image" src="" alt="deal item" width="300" height="300">
+            <p id="deal-name"></p>
+            <p id="deal-price"></p>
+            <button class="cta-btn">Grab Deal</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Sale SZN. All Rights Reserved.</p>
+    </footer>
+
+<!-- Cart Popup -->
+<div class="cart-model" id="cartModel">
+  <h2>Your Cart</h2>
+  <div class="cart-items" id="cartItems"></div> <!-- List of selected items -->
+  <div class="cart-total" id="cartTotal">Total: $0.00</div> <!-- Running total -->
+  <button class="close-btn" onclick="toggleCart()">Close</button>
+</div>
+
+    <script>
+        // HAMBURGER MENU
+        const toggle = document.getElementById('menu-toggle');
+        const links = document.getElementById('nav-links');
+        toggle.addEventListener('click', () => {
+            toggle.classList.toggle('active');
+            links.classList.toggle('active');
+        });
+
+        // DEAL OF THE DAY FEATURE
+        const deals = [
+            {name: "Laptop", price: "40% OFF", img: "Pictures/laptop.jpg"},
+            {name: "Shoes", price: "30% OFF", img: "Pictures/jordan.jpg"},
+            {name: "Jewelry", price: "25% OFF", img: "Pictures/Gold.jpg"},
+            
+        ];
+
+        const randomDeal = deals[Math.floor(Math.random() * deals.length)];
+        document.getElementById("deal-name").textContent = randomDeal.name;
+        document.getElementById("deal-price").textContent = randomDeal.price;
+        document.getElementById("deal-image").src = randomDeal.img;
+    </script>
+    <script src="shopping_cart.js"></script>
+</body>
+</html>

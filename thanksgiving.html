@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sale SZN | Holiday Decorations</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom right, #f7e9d0, #fef4e8);
+      overflow-x: hidden;
+    }
+
+    .banner {
+      background-color: #c1121f;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .navbar {
+      background-color: #003049;
+      text-align: center;
+    }
+
+    .navbar ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .navbar li {
+      display: inline-block;
+      margin: 10px 15px;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+
+    .content {
+      text-align: center;
+      padding: 30px;
+    }
+
+    h2 {
+      color: #780000;
+    }
+
+    .decor-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .item {
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+      transition: transform 0.3s ease;
+    }
+
+    .item:hover {
+      transform: scale(1.05);
+    }
+
+    .item img {
+      width: 100%;
+      border-radius: 10px;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .item button {
+      background-color: #c1121f;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      margin-top: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .item button:hover {
+      background-color: #a50f1a;
+    }
+
+    footer {
+      background-color: #003049;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+
+    /* Basket */
+    .basket {
+      position: fixed;
+      top: 15px;
+      right: 20px;
+      background-color: white;
+      border-radius: 10px;
+      padding: 10px 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      font-weight: bold;
+      z-index: 2;
+    }
+
+    /* Canvas for snow animation */
+    #snow {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="snow"></canvas>
+
+  <div class="basket">
+    🧺 Items: <span id="itemCount">0</span> | Total: $<span id="total">0.00</span>
+  </div>
+
+  <header class="banner">
+    <h1>SALE SZN</h1>
+    <p>Holiday Decorations — Thanksgiving & Christmas Deals!</p>
+  </header>
+
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="clothes.html">Clothes</a></li>
+      <li><a href="electronics.html">Electronics</a></li>
+	<li><a href="jewelry.html">Jewelry</a></li>
+	<li><a href="discountShoePage.html">Shoes</a></li>
+	<li><a href="Toys.html">Toys</a></li>
+      <li><a href="thanksgiving.html">Thanksgiving/Christmas</a></li>
+    </ul>
+  </nav>
+
+  <section class="content">
+    <h2>🎅 Christmas Decorations 🎄</h2>
+    <div class="decor-grid">
+      <div class="item">
+        <img src="Pictures/tree.png" alt="Christmas Tree">
+        <h3>Pre-Lit Christmas Tree</h3>
+        <p>$59.99</p>
+        <button onclick="addToCart(59.99)">Add to Basket</button>
+      </div>
+      <div class="item">
+        <img src="Pictures/lights.png" alt="Lights">
+        <h3>LED Light Set</h3>
+        <p>$9.99</p>
+        <button onclick="addToCart(9.99)">Add to Basket</button>
+      </div>
+      <div class="item">
+        <img src="Pictures/wreath.png" alt="Wreath">
+        <h3>Christmas Wreath</h3>
+        <p>$14.99</p>
+        <button onclick="addToCart(14.99)">Add to Basket</button>
+      </div>
+      <div class="item">
+        <img src="Pictures/ornaments.png" alt="Ornaments">
+        <h3>Glass Ornament Set</h3>
+        <p>$12.99</p>
+        <button onclick="addToCart(12.99)">Add to Basket</button>
+      </div>
+      <div class="item">
+        <img src="Pictures/stocking.png" alt="Stocking">
+        <h3>Holiday Stocking</h3>
+        <p>$6.99</p>
+        <button onclick="addToCart(6.99)">Add to Basket</button>
+      </div>
+    </div>
+
+    <h2>🦃 Thanksgiving Decorations 🍂</h2>
+    <div class="decor-grid">
+      <div class="item">
+        <img src="Pictures/pumpkin.png" alt="Pumpkin Centerpiece">
+        <h3>Pumpkin Centerpiece</h3>
+        <p>$14.99</p>
+        <button onclick="addToCart(14.99)">Add to Basket</button>
+      </div>
+      <div class="item">
+        <img src="Pictures/thankful-sign.png" alt="Thankful Sign">
+        <h3>"Thankful" Wooden Sign</h3>
+        <p>$8.99</p>
+        <button onclick="addToCart(8.99)">Add to Basket</button>
+      </div>
+      <div class="item">
+        <img src="Pictures/leaves.png" alt="Fall Garland">
+        <h3>Fall Leaves Garland</h3>
+        <p>$6.99</p>
+        <button onclick="addToCart(6.99)">Add to Basket</button>
+      </div>
+      <div class="item">
+        <img src="Pictures/tablecloth.png" alt="Tablecloth">
+        <h3>Harvest Tablecloth</h3>
+        <p>$12.49</p>
+        <button onclick="addToCart(12.49)">Add to Basket</button>
+      </div>
+      <div class="item">
+        <img src="Pictures/candles.png" alt="Candles">
+        <h3>Autumn Candle Set</h3>
+        <p>$10.99</p>
+        <button onclick="addToCart(10.99)">Add to Basket</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Sale SZN. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // 🛒 Basket functionality
+    let itemCount = 0;
+    let total = 0;
+
+    function addToCart(price) {
+      itemCount++;
+      total += price;
+      document.getElementById("itemCount").textContent = itemCount;
+      document.getElementById("total").textContent = total.toFixed(2);
+    }
+
+    // ❄️ Snow animation (unique feature)
+    const canvas = document.getElementById("snow");
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let flakes = Array.from({length: 60}, () => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: Math.random() * 3 + 1,
+      d: Math.random() + 1
+    }));
+
+    function drawSnow() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "white";
+      flakes.forEach(flake => {
+        ctx.beginPath();
+        ctx.arc(flake.x, flake.y, flake.r, 0, Math.PI * 2);
+        ctx.fill();
+      });
+      moveSnow();
+    }
+
+    function moveSnow() {
+      flakes.forEach(flake => {
+        flake.y += flake.d;
+        if (flake.y > canvas.height) {
+          flake.y = 0;
+          flake.x = Math.random() * canvas.width;
+        }
+      });
+    }
+
+    function animateSnow() {
+      drawSnow();
+      requestAnimationFrame(animateSnow);
+    }
+
+    animateSnow();
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,138 @@
+<!-- Author of page: Benjamin Waters -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sale SZN</title>
+<link rel="stylesheet" type="text/css" href="style_electronics.css">
+<link rel="stylesheet" type="text/css" href="cart_style.css">
+
+<style>
+.wrapper {
+	background-color: #FFFFFF;
+	width: 100%;
+	max-width: 950px;
+	margin: 0 auto;
+	padding: 10px;
+	box-shadow: 5px 5px 15px 5px #4A2511;
+	border-radius: 10px 10px 10px 10px;
+}
+.top-container {
+	display: flex;
+	align-items: center;
+	padding-top: 50px;
+	padding-bottom: 50px;
+
+
+
+}
+.bottom-container {
+	display: flex;
+	align-items: center;
+	padding-top: 50px;
+	padding-bottom: 50px;
+
+
+}
+
+.left {
+	position: relative;
+	left: 5%;
+	width: 100%;
+	margin: auto;
+
+}
+
+.right {
+	position: relative;
+	right: 5%;
+	width: 100%;
+	margin: auto;
+
+}
+a {
+	display: inline-block;
+	text-decoration: none;
+	color: brown;
+
+
+
+}
+img {
+	border: solid 1px;
+	border-color: #000000;
+}
+
+</style>
+
+
+</head>
+
+
+
+<body>
+<header class="banner">
+<div class="cart-container">
+  <div class="cart" onclick="toggleCart()">🛒</div>
+  <span class="cart-badge" id="cartBadge">0</span>
+</div>
+
+<h2>Electronics</h2>
+</header>
+
+<nav class="navbar">
+  <ul>
+	<li><a href="index.html">Home</a></li>
+	<li><a href="clothes.html">Clothes</a></li>
+	<li><a href="electronics.html">Electronics</a></li>
+	<li><a href="jewelry.html">Jewelry</a></li>
+	<li><a href="discountShoePage.html">Shoes</a></li>
+	<li><a href="toys.html">Toys</a></li>
+	<li><a href="thanksgiving.html">Thanksgiving/Christmas</a></li>
+  </ul>
+</nav>
+
+<section class="content">
+<div class="wrapper">
+  <h2>Types of Electronics</h2>
+  <div class="top-container">
+	<div class="left">
+	<p>Discount TVs</p><br><img src="Pictures/tv_thumbnail.jpg" alt="TV thumbnail" width="250" height="250"><br><a href="discount_tvs.html">Click here to shop<br> for discount TVs!</a>
+  </div>
+
+ 
+	<div class="right">
+	<p>Discount Computers/Laptops</p><br><img src="Pictures/laptop.jpg" alt="Laptop thumbnail" width="250" height="250"><br><a href="discount_computers.html">Click here to shop for<br> discount computers and laptops!</a>
+	</div>
+  </div>
+  <div class="bottom-container">
+  	<div class="left">
+	<p>Discount Video Games</p><br><img src="Pictures/vg_thumbnail.jpg" alt="Video Game thumbnail" width="250" height="250"><br><a href="discount_games.html">Click here to shop for<br> discount video games!</a>
+  </div>
+
+
+	<div class="right">
+	<p>Discount Phones</p><br><img src="Pictures/phone_thumbnail.jpg" alt="Phone thumbnail" width="250" height="250"><br><a href="discount_phone.html">Click here to shop <br>for discount cell phones!</a>
+	</div>
+
+  </div>
+</div>
+</section>
+
+<!-- Cart Popup -->
+<div class="cart-model" id="cartModel">
+  <h2>Your Cart</h2>
+  <div class="cart-items" id="cartItems"></div> <!-- List of selected items -->
+  <div class="cart-total" id="cartTotal">Total: $0.00</div> <!-- Running total -->
+  <button class="close-btn" onclick="toggleCart()">Close</button>
+</div>
+
+<!-- Javascript External File Section -->
+
+<script src="shopping_cart.js"></script>
+
+</body>
+
+</html>

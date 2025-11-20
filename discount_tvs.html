@@ -1,0 +1,186 @@
+<!-- Author: Benjamin Waters -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sale SZN</title>
+
+<link rel="stylesheet" type="text/css" href="style_electronics.css">
+<link rel="stylesheet" type="text/css" href="cart_style.css">
+
+<style>
+.wrapper {
+	background-color: #FFFFFF;
+	width: 100%;
+	max-width: 950px;
+	margin: 0 auto;
+	padding: 10px;
+	box-shadow: 5px 5px 15px 5px #4A2511;
+	border-radius: 10px 10px 10px 10px;
+
+}
+.container {
+	display: flex;
+	align-items: center;
+	padding-top: 50px;
+	padding-bottom: 50px;
+
+}
+
+.left {
+	position: relative;
+	left: 0%;
+	width: 100%;
+	margin: auto;
+
+}
+
+.right {
+	position: relative;
+	right: 0%;
+	width: 100%;
+	margin: auto;
+
+}
+a {
+	display: inline-block;
+	text-decoration: none;
+	color: brown;
+
+}
+img {
+	border: solid 1px;
+	border-color: #000000;
+}
+
+</style>
+</head>
+
+
+
+<body>
+<header class="banner">
+<div class="cart-container">
+  <div class="cart" onclick="toggleCart()">🛒</div>
+  <span class="cart-badge" id="cartBadge">0</span>
+</div>
+
+<h2>Discount TVs</h2>
+
+</header>
+
+<nav class="navbar">
+  <ul>
+	<li><a href="index.html">Home</a></li>
+	<li><a href="clothes.html">Clothes</a></li>
+	<li><a href="electronics.html">Electronics</a></li>
+	<li><a href="jewelry.html">Jewelry</a></li>
+	<li><a href="discountShoePage.html">Shoes</a></li>
+	<li><a href="toys.html">Toys</a></li>
+	<li><a href="thanksgiving.html">Thanksgiving/Christmas</a></li>
+  </ul>
+</nav>
+
+<section class="content">
+<div class="wrapper">
+<!-- Samsung TVs -->
+<h2>Samsung TVs</h2>
+
+<div class="container">
+	<div class="left">
+		<p>Samsung 4K UHD Smart TV</p><img src="Pictures/samsungUHD.jpg" width="300" height="250"><br><p>Original Price: <del>$350.00</del></p><p>Discount Price: $278.00 (20% off)</p>
+	<button onclick="addToCart('Samsung 4K UHD Smart TV', 278.00)">Add to Cart</button>
+	</div>
+	<div class="right">
+		<p>Samsung Q7F 4K QLED Smart TV</p><img src="Pictures/samsungQLED.jpg" width="300" height="250"><br><p>Original Price: <del>$400.00</del></p><p>Discount Price: $349.99 (12% off)</p>
+	<button onclick="addToCart('Samsung Q7F 4K QLED Smart TV', 349.99)">Add to Cart</button>
+	</div>
+
+</div>
+<div class="container">
+	<div class="left">
+		<p>Samsung Q8F 4K QLED Vision AI Smart TV</p><img src="Pictures/samsung_ai.jpg" width="300" height="250"><br><p>Original Price: <del>$998.00</del></p><p>Discount Price: $697.00 (30% off)</p>
+	<button onclick="addToCart('Samsung Q8F 4K QLED Vision AI Smart TV', 697.00)">Add to Cart</button>
+	</div>
+	<div class="right">
+		<p>Samsung DU7200 Crystal 4K UHD Smart TV</p><img src="Pictures/samsung_crystal.jpg" width="300" height="250"><br><p>Original Price: <del>$270.00</del></p><p>Discount Price: $229.99 (14% off)</p>
+	<button onclick="addToCart('Samsung DU7200 Crystal 4K UHD Smart TV', 229.99)">Add to Cart</button>
+	</div>
+
+</div>
+<div class="container">
+	<div class="left">
+		<p>Samsung Neo QLED 4K QN90F Vision AI Smart TV</p><img src="Pictures/samsung_neo.jpg" width="300" height="250"><br><p>Original Price: <del>$1,199.00</del></p><p>Discount Price: $899.00 (26% off)</p>
+	<button onclick="addToCart('Samsung Neo QLED 4K QN90F Vision AI Smart TV', 899.00)">Add to Cart</button>
+	</div>
+	<div class="right">
+		<p>Samsung Neo QLED 8K QN990F Vision AI Smart TV</p><img src="Pictures/samsung_8k.jpg" width="300" height="250"><br><p>Original Price: <del>$6,498.00</del></p><p>Discount Price: $5,999.99(1% off)</p>
+	<button onclick="addToCart('Samsung Neo QLED 8K QN990F Vision AI Smart TV', 5999.99)">Add to Cart</button>
+	</div>
+</div>
+
+<!-- Apple TVs -->
+<h2>Apple TVs</h2>
+
+<div class="container">
+	<div class="left">
+		<p>Apple TV 5th Gen 32GB</p><img src="Pictures/apple5thgen.jpg" alt="Apple TV 5th Gen 32GB" width="300" height="250"><br><p>Original Price: <del>$20.00</del></p><p>Discount Price: $17.99 (10% off)</p><button onclick="addToCart('Apple TV 5th Gen 32GB', 17.99)">Add to Cart</button>
+	</div>
+
+	<div class="right">
+		<p>Apple TV 4K</p><img src="Pictures/apple4k.jpg" alt="Pictures/Apple TV 4K" width="300" height="250"><br><p>Original Price: <del>$130.00</del></p><p>Discount Price: $118.27 (9% off)</p><button onclick="addToCart('Apple TV 4K', 118.27)">Add to Cart</button>
+	</div>
+</div>
+<div class="container">
+	<div class="left">
+		<p>Apple TV HD</p><img src="Pictures/applehd.jpg" alt="Pictures/Apple TV HD" width="300" height="250"><br><p>Original Price: <del>$150.00</del></p><p>Discount Price: $87.48 (41% off)</p><button onclick="addToCart('Apple TV HD', 87.48)">Add to Cart</button>
+	</div>
+	
+	<div class="right">
+		<p>Apple TV 3rd Generation</p><img src="Pictures/apple3rdgen.jpg" alt="Apple TV 4K" width="300" height="250"><br><p>Original Price: <del>$120.00</del></p><p>Discount Price: $99.99 (20% off)</p><button onclick="addToCart('Apple TV 3rd Generation', 99.99)">Add to Cart</button>
+	</div>
+</div>
+
+<!-- TCL TVs -->
+<h2>TCL TVs</h2>
+
+<div class="container">
+	<div class="left">
+		<p>TCL 4K Smart TV</p><img src="Pictures/tcl4k.jpg" alt="TCL 4K Smart TV" width="300" height="250"><br><p>Original Price: <del>$278.00</del></p><p>Discount Price: $198.00 (28% off)</p><button onclick="addToCart('TCL 4K Smart TV', 198.00)">Add to Cart</button>
+	</div>
+
+	<div class="right">
+		<p>TCL Q Series 4K UHD HDR QLED Smart TV with Google TV</p><img src="Pictures/tclqseries.jpg" width="300" height="250"><br><p>Original Price: <del>$350.00</del></p><p>Discount Price: $238.00 (32% off)</p><button onclick="addToCart('TCL Q Series 4K UHD HDR QLED Smart TV with Google TV', 238.00)">Add to Cart</button>
+	</div>
+</div>
+<div class="container">
+	<div class="left">
+		<p>TCL F35-Series 4K UHD Smart Fire TV</p><img src="Pictures/tclf35.jpg" width="300" height="250"><br><p>Original Price: <del>$250.00</del></p><p>Discount Price: $149.99 (40% off)</p><button onclick="addToCart('TCL F35-Series 4K UHD Smart Fire TV', 149.99)">Add to Cart</button>
+	</div>
+
+	<div class="right">
+		<p>TCL Class QM8K Series QD-Mini LED 4K UHD Smart Google TV</p><img src="Pictures/tclclass.jpg" width="300" height="250"><br><p>Original Price: <del>$2500.00</del></p><p>Discount Price: $1,299.99 (48% off)</p><button onclick="addToCart('TCL Class QM8K Series QD-Mini LED 4K UHD Smart Google TV', 1299.99)">Add to Cart</button>
+	</div>
+</div>
+</div>
+</div>
+
+
+</section>
+
+<!-- Cart Popup -->
+<div class="cart-model" id="cartModel">
+  <h2>Your Cart</h2>
+  <div class="cart-items" id="cartItems"></div> <!-- List of selected items -->
+  <div class="cart-total" id="cartTotal">Total: $0.00</div> <!-- Running total -->
+  <button class="close-btn" onclick="toggleCart()">Close</button>
+</div>
+
+<!-- Javascript External File Section -->
+
+<script src="shopping_cart.js"></script>
+
+</body>
+
+</html>

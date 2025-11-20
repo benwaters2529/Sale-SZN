@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Clothes</title>
+<link rel = "stylesheet" type="text/css" href="style.css">
+<link rel = "stylesheet" type="text/css" href="cart_style.css">
+
+<style>
+body {
+         margin : 0;
+         font-family: ‘Poppins’, sans-serif;
+         background-color: #f3e5d0;
+         color: #4b3b2a;
+   
+  }
+  .banner {
+            background-color: #c19a6b;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+  }
+.cart-badge {
+	position: absolute;
+	top: 40px;
+	right: 9px;
+	background-color: #e53935;
+	color: white;
+	border-radius: 50%;
+	font-size: 0.75em;
+	padding: 2px 6px;
+	display: none;
+}
+</style>
+
+</head>
+
+<body>
+<header class="banner">
+<div class="cart-container">
+  <div class="cart" onclick="toggleCart()">🛒</div>
+  <span class="cart-badge" id="cartBadge">0</span>
+</div>
+<h1>SALE SZN</h1>
+<p>Unbeatable discounts all season long!</p>
+</header>
+
+<nav class="navbar">
+  <ul>
+	<li><a href="index.html">Home</a></li>
+	<li><a href="clothes.html">Clothes</a></li>
+	<li><a href="electronics.html">Electronics</a></li>
+	<li><a href="jewelry.html">Jewelry</a></li>
+        <li><a href="discountShoePage.html">Shoes</a></li>
+        <li><a href="Toys.html">Toys</a></li>
+	<li><a href="thanksgiving.html">Thanksgiving/Christmas</a></li>
+  </ul>
+</nav>
+<h1><center>Clothes</center></h1>
+<center>
+    <h2>Coats <br><a href = "Coats.html"><img src = "Pictures/Coats1.jpg"></a></h2>
+    <h2>Sweatpants<br><a href = "Sweatpants.html"><img src = "Pictures/Sweatpants1.jpg"></a></h2>
+    <h2>Hoodies<br><a href = "Hoodies.html"><img src = "Pictures/Hoodies1.jpg"></a></h2>
+    <h2>Snowpants<br><a href = "Snowpants.html"><img src = "Pictures/Snowpants1.jpg"></a></h2>
+   </div>
+</center>
+
+<!-- Cart Popup -->
+<div class="cart-model" id="cartModel">
+  <h2>Your Cart</h2>
+  <div class="cart-items" id="cartItems"></div> <!-- List of selected items -->
+  <div class="cart-total" id="cartTotal">Total: $0.00</div> <!-- Running total -->
+  <button class="close-btn" onclick="toggleCart()">Close</button>
+</div>
+
+<script src = "shopping_cart.js"></script>          
+</body>
+</html>
+

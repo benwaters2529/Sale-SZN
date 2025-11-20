@@ -1,0 +1,155 @@
+<!-- Author: Benjamin Waters -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sale SZN</title>
+<link rel="stylesheet" type="text/css" href="style_electronics.css">
+<link rel="stylesheet" type="text/css" href="cart_style.css">
+
+<style>
+.wrapper {
+	background-color: #FFFFFF;
+	width: 100%;
+	max-width: 950px;
+	margin: 0 auto;
+	padding: 10px;
+	box-shadow: 5px 5px 15px 5px #4A2511;
+	border-radius: 10px 10px 10px 10px;
+
+}
+.container {
+	display: flex;
+	align-items: center;
+	padding-top: 50px;
+	padding-bottom: 50px;
+
+}
+
+.left {
+	position: relative;
+	left: 0%;
+	width: 100%;
+	margin: auto;
+
+}
+
+.right {
+	position: relative;
+	right: 0%;
+	width: 100%;
+	margin: auto;
+
+}
+a {
+	display: inline-block;
+	text-decoration: none;
+	color: brown;
+
+}
+img {
+	border: solid 1px;
+	border-color: #000000;
+}
+
+</style>
+</head>
+
+
+
+<body>
+<header class="banner">
+<div class="cart-container">
+  <div class="cart" onclick="toggleCart()">🛒</div>
+  <span class="cart-badge" id="cartBadge">0</span>
+</div>
+
+<h2>Discount Game Consoles</h2>
+
+</header>
+
+<nav class="navbar">
+  <ul>
+	<li><a href="index.html">Home</a></li>
+	<li><a href="clothes.html">Clothes</a></li>
+	<li><a href="electronics.html">Electronics</a></li>
+	<li><a href="jewelry.html">Jewelry</a></li>
+	<li><a href="discountShoePage.html">Shoes</a></li>
+	<li><a href="toys.html">Toys</a></li>
+	<li><a href="thanksgiving.html">Thanksgiving/Christmas</a></li>
+  </ul>
+</nav>
+
+<section class="content">
+<div class="wrapper">
+<!-- Playstation Consoles -->
+<h2>Playstation Consoles</h2>
+
+<div class="container">
+	<div class="left">
+		<p>Sony PlayStation 4 Slim Console</p><img src="Pictures/ps4slim.jpg" width="300" height="250"><br><p>Original Price: <del>$140.00</del></p><p>Discount Price: $114.99 (17% off)</p>
+	<button onclick="addToCart('Sony PlayStation 4 Slim Console', 114.99)">Add to Cart</button>
+	</div>
+	<div class="right">
+		<p>Sony PlayStation 4 Slim Console Days of Play Limited Edition 1TB</p><img src="Pictures/ps4dop.jpg" width="300" height="250"><br><p>Original Price: <del>$170.00</del></p><p>Discount Price: $144.99 (14% off)</p>
+	<button onclick="addToCart('Sony PlayStation 4 Slim Console Days of Play Limited Edition 1TB', 144.99)">Add to Cart</button>
+	</div>
+
+</div>
+
+<div class="container">
+	<div class="left">
+		<p>Sony PlayStation 5 Slim Console</p><img src="Pictures/ps5slim.jpg" width="300" height="250"><br><p>Original Price: <del>$549.00</del></p><p>Discount Price: $524.98 (5% off)</p>
+	<button onclick="addToCart('Sony PlayStation 5 Slim Console', 524.98)">Add to Cart</button>
+	</div>
+	<div class="right">
+		<p>PlayStation 5 Digital Slim Edition Fortnite Cobalt Star Bundle</p><img src="Pictures/ps5bundle.jpg" width="300" height="250"><br><p>Original Price: <del>$620.00</del></p><p>Discount Price: $569.99(8% off)</p>
+	<button onclick="addToCart('Samsung Neo QLED 8K QN990F Vision AI Smart TV', 569.99)">Add to Cart</button>
+	</div>
+</div>
+
+<!-- Nintendo Consoles -->
+<h2>Nintendo Consoles</h2>
+
+<div class="container">
+	<div class="left">
+		<p>Nintendo Switch Console</p><img src="Pictures/switch.jpg" width="300" height="250"><br><p>Original Price: <del>$361.00</del></p><p>Discount Price: $309.95 (14% off)</p><button onclick="addToCart('Nintendo Switch Console', 309.95)">Add to Cart</button>
+	</div>
+
+	<div class="right">
+		<p>Nintendo Wii Console</p><img src="Pictures/wii.jpg" width="300" height="250"><br><p>Original Price: <del>$200.00</del></p><p>Discount Price: $143.00 (28% off)</p><button onclick="addToCart('Nintendo Wii Console', 143.00)">Add to Cart</button>
+	</div>
+</div>
+<div class="container">
+	<div class="left">
+		<p>Nintendo Switch Lite</p><img src="Pictures/switchlite.jpg" width="300" height="250"><br><p>Original Price: <del>$250.00</del></p><p>Discount Price: $199.99 (20% off)</p><button onclick="addToCart('Nintendo Switch Lite', 199.99)">Add to Cart</button>
+	</div>
+	
+	<div class="right">
+		<p>Nintendo Wii U 32GB Black</p><img src="Pictures/wiiu.jpg" width="300" height="250"><br><p>Original Price: <del>$50.00</del></p><p>Discount Price: $24.99 (50% off)</p><button onclick="addToCart('Nintendo Wii U 32GB Black', 24.99)">Add to Cart</button>
+	</div>
+</div>
+
+
+</div>
+</div>
+
+
+</section>
+
+<!-- Cart Popup -->
+<div class="cart-model" id="cartModel">
+  <h2>Your Cart</h2>
+  <div class="cart-items" id="cartItems"></div> <!-- List of selected items -->
+  <div class="cart-total" id="cartTotal">Total: $0.00</div> <!-- Running total -->
+  <button class="close-btn" onclick="toggleCart()">Close</button>
+</div>
+
+<!-- Javascript External File Section -->
+
+<script src="shopping_cart.js"></script>
+
+</body>
+
+</html>
